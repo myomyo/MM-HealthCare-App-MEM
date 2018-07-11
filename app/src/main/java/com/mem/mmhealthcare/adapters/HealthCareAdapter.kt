@@ -2,6 +2,7 @@ package com.mem.mmhealthcare.adapters
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.mem.mmhealthcare.R
@@ -22,11 +23,14 @@ class HealthCareAdapter(context: Context): RecyclerView.Adapter<HealthCareViewHo
     }
 
     override fun getItemCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
         return 10
     }
 
     override fun onBindViewHolder(holder: HealthCareViewHolder, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+        Log.d("adapter", " position :  $position")
+
+
     }
 }

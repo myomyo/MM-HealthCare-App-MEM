@@ -11,79 +11,76 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Scientific research finds higher doses of vitamin C result in greater beneficial health effects"
-        android:textSize="@dimen/text_regular_2x"
-        android:textColor="@color/secondaryTextColor"/>
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/text_regular_2x" />
+
     <ImageView
         android:id="@+id/iv_image"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/vitamin_c_fruits"
-        android:scaleType="centerCrop"
+        android:layout_height="160dp"
         android:layout_below="@+id/tv_title"
-        android:layout_marginTop="@dimen/margin_medium"/>
+        android:layout_marginTop="@dimen/margin_medium"
+        android:scaleType="centerCrop"
+        android:src="@drawable/vitamin_c_fruits" />
+
     <LinearLayout
         android:id="@+id/ll_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_below="@+id/iv_image"
-        android:layout_marginTop="@dimen/margin_medium">
+        android:layout_marginTop="@dimen/margin_medium"
+        android:orientation="horizontal">
+
         <TextView
             android:id="@+id/tv_info_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Article"
-            android:textColor="@color/text_blue"
+            android:layout_marginRight="@dimen/margin_medium_2"
             android:background="@drawable/bg_round_white"
             android:padding="@dimen/margin_small"
-            android:textSize="@dimen/text_smaller"
-            android:layout_marginRight="@dimen/margin_medium_2"/>
+            android:text="Article"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/text_smaller" />
+
         <TextView
             android:id="@+id/tv_author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_medium_2"
             android:text="Isabelle Z"
-            android:textSize="@dimen/text_smaller"
             android:textColor="@color/secondary_text"
-            android:layout_marginRight="@dimen/margin_medium_2"/>
+            android:textSize="@dimen/text_smaller" />
+
         <Button
             android:id="@+id/btn_view"
+            style="@style/btn_icon"
             android:layout_width="46dp"
             android:layout_height="30dp"
-            android:gravity="center_vertical|end"
-            android:text="5003"
-            android:textSize="@dimen/text_smaller"
-            android:textColor="@color/secondary_text"
             android:drawableLeft="@drawable/ic_chat_gray_16dp"
-            android:background="@android:color/transparent"
-            android:layout_marginRight="@dimen/margin_medium_2"/>
+            android:text="5003" />
+
         <Button
             android:id="@+id/btn_comment"
+            style="@style/btn_icon"
             android:layout_width="46dp"
             android:layout_height="30dp"
-            android:gravity="center_vertical|end"
-            android:text="5003"
-            android:textSize="@dimen/text_smaller"
-            android:textColor="@color/secondary_text"
             android:drawableLeft="@drawable/ic_chat_gray_16dp"
-            android:background="@android:color/transparent"
-            android:layout_marginRight="@dimen/margin_medium_2"/>
+            android:text="5003" />
+
         <Button
             android:id="@+id/btn_like"
+            style="@style/btn_icon"
             android:layout_width="46dp"
             android:layout_height="30dp"
-            android:gravity="center_vertical|end"
-            android:text="5003"
-            android:textSize="@dimen/text_smaller"
-            android:textColor="@color/secondary_text"
             android:drawableLeft="@drawable/ic_thumb_up_gray_16dp"
-            android:background="@android:color/transparent"/>
+            android:text="5003" />
     </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/ll_info"
-        android:background="@color/divider"
-        android:layout_marginTop="@dimen/margin_medium_2"/>
+        android:layout_marginTop="@dimen/margin_card_medium_2"
+        android:background="@color/divider" />
 
 </RelativeLayout>
