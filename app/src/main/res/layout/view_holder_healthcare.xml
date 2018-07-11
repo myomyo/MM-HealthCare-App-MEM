@@ -17,7 +17,7 @@
         android:id="@+id/iv_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/Vitamin_C_Fruits"
+        android:src="@drawable/vitamin_c_fruits"
         android:scaleType="centerCrop"
         android:layout_below="@+id/tv_title"
         android:layout_marginTop="@dimen/margin_medium"/>
