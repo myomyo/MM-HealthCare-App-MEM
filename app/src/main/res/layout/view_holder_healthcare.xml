@@ -10,7 +10,7 @@
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Scientific research finds higher doses of vitamin C result in greater beneficial health effects"
+        android:text="@string/title_info"
         android:textColor="@color/secondaryTextColor"
         android:textSize="@dimen/text_regular_2x" />
 
@@ -56,7 +56,7 @@
             style="@style/btn_icon"
             android:layout_width="46dp"
             android:layout_height="30dp"
-            android:drawableLeft="@drawable/ic_chat_gray_16dp"
+            android:drawableLeft="@drawable/ic_picture_in_picture_alt_gray_16dp"
             android:text="5003" />
 
         <Button

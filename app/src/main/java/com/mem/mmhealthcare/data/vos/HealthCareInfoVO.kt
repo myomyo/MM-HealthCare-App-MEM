@@ -24,4 +24,7 @@ class HealthCareInfoVO {
 
     @SerializedName("complete-url")
     val completeUrl: String = ""
+
+    @SerializedName("info-type")
+    val infoIype: String? = null
 }
