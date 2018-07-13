@@ -4,5 +4,5 @@ import com.mem.mmhealthcare.data.vos.HealthCareInfoVO
 
 interface HealthCareItemDelegate {
 
-    fun onTabHealthCare(healthCare: HealthCareInfoVO)
+    fun onTabHealthCare(healthCare: HealthCareInfoVO?)
 }

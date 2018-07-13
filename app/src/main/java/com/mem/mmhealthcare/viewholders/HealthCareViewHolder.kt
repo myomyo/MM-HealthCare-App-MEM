@@ -1,11 +1,13 @@
 package com.mem.mmhealthcare.viewholders
 
+import android.view.TouchDelegate
 import android.view.View
 import com.bumptech.glide.Glide
 import com.mem.mmhealthcare.data.vos.HealthCareInfoVO
+import com.mem.mmhealthcare.delegates.HealthCareItemDelegate
 import kotlinx.android.synthetic.main.view_holder_healthcare.view.*
 
-class HealthCareViewHolder(itemView: View) : BaseViewHolder<HealthCareInfoVO>(itemView) {
+class HealthCareViewHolder(itemView: View, private val mDelegate: HealthCareItemDelegate) : BaseViewHolder<HealthCareInfoVO>(itemView) {
 
     override fun setData(data: HealthCareInfoVO) {
         mData = data
@@ -24,7 +26,7 @@ class HealthCareViewHolder(itemView: View) : BaseViewHolder<HealthCareInfoVO>(it
 
     }
 
-    override fun onClick(v: View?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onClick(v: View) {
+        mDelegate.onTabHealthCare(mData)
     }
 }

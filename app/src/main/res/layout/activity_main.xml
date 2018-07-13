@@ -43,7 +43,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="Forum"
-                    android:textColor="@color/secondaryLightColor"
+                    android:textColor="@color/primary_light"
                     android:textSize="@dimen/text_regular"/>
                 <TextView
                     android:id="@+id/tv_feedback"
@@ -51,7 +51,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="Feedback"
-                    android:textColor="@color/secondaryLightColor"
+                    android:textColor="@color/primary_light"
                     android:textSize="@dimen/text_regular"/>
                 <ImageView
                     android:id="@+id/iv_event"
@@ -71,10 +71,16 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:background="@color/bg_white">
 
-        <android.support.v7.widget.RecyclerView
+        <com.mem.mmhealthcare.components.SmartRecyclerView
             android:id="@+id/rv_health_care"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
+        <include
+            android:id="@+id/vpEmptyHealthCare"
+            layout="@layout/view_pod_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
     </android.support.v4.widget.SwipeRefreshLayout>
 

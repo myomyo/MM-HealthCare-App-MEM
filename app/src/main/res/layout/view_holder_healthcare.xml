@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/margin_medium_3"
-    android:layout_marginTop="@dimen/margin_medium_2">
+    android:layout_marginTop="@dimen/margin_medium">
 
 
     <TextView
@@ -28,60 +28,74 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/iv_image"
-        android:layout_marginTop="@dimen/margin_card_medium"
+        android:layout_marginTop="@dimen/margin_medium"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/tv_info_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/margin_medium_2"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/margin_card_medium_2"
             android:background="@drawable/bg_round_white"
-            android:paddingHorizontal="@dimen/margin_medium"
-            android:paddingVertical="@dimen/margin_small"
+            android:paddingVertical="@dimen/margin_smaller"
+            android:paddingHorizontal="@dimen/margin_small"
             android:text="Article"
             android:textColor="@color/text_blue"
-            android:textSize="@dimen/text_smaller" />
+            android:textSize="@dimen/text_smaller"/>
 
         <TextView
             android:id="@+id/tv_author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/margin_medium_2"
-            android:text="Isabelle Z"
-            android:textColor="@color/secondary_text"
-            android:textSize="@dimen/text_smaller" />
+            style="@style/text_smaller"
+            android:text="Isabelle Z"/>
 
-        <Button
-            android:id="@+id/btn_view"
-            style="@style/btn_icon"
-            android:layout_width="46dp"
-            android:layout_height="30dp"
-            android:drawableLeft="@drawable/ic_picture_in_picture_alt_gray_16dp"
+        <ImageView
+            android:id="@+id/iv_view"
+            style="@style/small_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_picture_in_picture_alt_gray_16dp" />
+
+        <TextView
+            style="@style/text_smaller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="5003" />
 
-        <Button
-            android:id="@+id/btn_comment"
-            style="@style/btn_icon"
-            android:layout_width="46dp"
-            android:layout_height="30dp"
-            android:drawableLeft="@drawable/ic_chat_gray_16dp"
-            android:text="5003" />
+        <ImageView
+            android:id="@+id/iv_comment"
+            style="@style/small_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_chat_gray_16dp" />
 
-        <Button
-            android:id="@+id/btn_like"
-            style="@style/btn_icon"
-            android:layout_width="46dp"
-            android:layout_height="30dp"
-            android:drawableLeft="@drawable/ic_thumb_up_gray_16dp"
-            android:text="5003" />
+        <TextView
+            style="@style/text_smaller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="230" />
+
+        <ImageView
+            android:id="@+id/iv_like"
+            style="@style/small_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_thumb_up_gray_16dp" />
+
+        <TextView
+            style="@style/text_smaller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1200" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_below="@+id/ll_info"
-        android:layout_marginTop="@dimen/margin_card_medium_2"
+        android:layout_marginVertical="@dimen/margin_card_medium_2"
         android:background="@color/divider" />
 
 </RelativeLayout>

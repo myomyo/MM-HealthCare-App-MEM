@@ -17,12 +17,15 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="btn_icon">
-        <item name="android:gravity">center_vertical|end</item>
+    <style name="text_smaller">
+        <item name="android:layout_gravity">center</item>
         <item name="android:textSize">@dimen/text_smaller</item>
         <item name="android:textColor">@color/secondaryColor</item>
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:layout_marginEnd">@dimen/margin_medium_2</item>
+        <item name="android:layout_marginEnd">@dimen/margin_medium</item>
+    </style>
+    <style name="small_icon">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginRight">@dimen/margin_small</item>
     </style>
 
     <style name="AppButton">
