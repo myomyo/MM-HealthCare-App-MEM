@@ -5,6 +5,8 @@ import com.mem.mmhealthcare.events.DataEvent
 import com.mem.mmhealthcare.network.HealthCareDataAgent
 import com.mem.mmhealthcare.utils.AppConstants
 import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 class HealthCareModel {
     companion object {
@@ -30,6 +32,7 @@ class HealthCareModel {
         HealthCareDataAgent.getInstance().loadHealthCareInfo(AppConstants.ACCESS_TOKEN)
     }
 
+    @Subscribe(threadMode = ThreadMode.BACKGROUND)
     fun onHealthCareLoadedEvent(healthCareEvent: DataEvent.HealthCareLoadedEvent){
         for(healthCare: HealthCareInfoVO in healthCareEvent.loadedHealthCareInfo){
             mHealthData[healthCare.healthCareId] = healthCare

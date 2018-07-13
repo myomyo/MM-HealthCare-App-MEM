@@ -14,4 +14,5 @@ class HealthCareAdapter(context: Context) : BaseRecyclerAdapter<HealthCareViewHo
         return HealthCareViewHolder(itemView)
     }
 
+
 }

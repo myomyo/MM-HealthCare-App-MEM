@@ -2,4 +2,6 @@
     <string name="app_name">MM Health Care</string>
 
     <string name="title_info">[Health] Scientific research finds higher doses of vitamin C result in greater beneficial health effects</string>
+    <string name="msg_generic_no_data">No data available!</string>
+    <string name="lbl_refresh">Refresh</string>
 </resources>
