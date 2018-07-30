@@ -32,10 +32,18 @@ class HealthCareModel {
         HealthCareDataAgent.getInstance().loadHealthCareInfo(AppConstants.ACCESS_TOKEN)
     }
 
+    fun forceloadHealthCareInfo(){
+        mHealthData = HashMap()
+        HealthCareDataAgent.getInstance().loadHealthCareInfo(AppConstants.ACCESS_TOKEN)
+    }
+
     @Subscribe(threadMode = ThreadMode.BACKGROUND)
     fun onHealthCareLoadedEvent(healthCareEvent: DataEvent.HealthCareLoadedEvent){
         for(healthCare: HealthCareInfoVO in healthCareEvent.loadedHealthCareInfo){
             mHealthData[healthCare.healthCareId] = healthCare
         }
+    }
+    fun getHealthCareById(id : Int) : HealthCareInfoVO?{
+        return mHealthData[id]
     }
 }

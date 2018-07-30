@@ -3,8 +3,10 @@ package com.mem.mmhealthcare.viewholders
 import android.view.TouchDelegate
 import android.view.View
 import com.bumptech.glide.Glide
+import com.mem.mmhealthcare.R.drawable.placeholder
 import com.mem.mmhealthcare.data.vos.HealthCareInfoVO
 import com.mem.mmhealthcare.delegates.HealthCareItemDelegate
+import com.mem.mmhealthcare.utils.GlideApp
 import kotlinx.android.synthetic.main.view_holder_healthcare.view.*
 
 class HealthCareViewHolder(itemView: View, private val mDelegate: HealthCareItemDelegate) : BaseViewHolder<HealthCareInfoVO>(itemView) {
@@ -22,7 +24,10 @@ class HealthCareViewHolder(itemView: View, private val mDelegate: HealthCareItem
 
         itemView.tv_author.text = data.author!!.authorName
 
-        Glide.with(itemView.context).load(data.image).into(itemView.iv_image)
+        GlideApp.with(itemView.context)
+                .load(data.image)
+                .placeholder(placeholder)
+                .into(itemView.iv_image)
 
     }
 

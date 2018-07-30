@@ -63,25 +63,35 @@
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
-
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_refresh_layout"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:background="@color/bg_white">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <com.mem.mmhealthcare.components.SmartRecyclerView
-            android:id="@+id/rv_health_care"
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:background="@color/bg_white">
+
+            <com.mem.mmhealthcare.components.SmartRecyclerView
+                android:id="@+id/rv_health_care"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
 
         <include
             android:id="@+id/vpEmptyHealthCare"
             layout="@layout/view_pod_empty"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+    </FrameLayout>
 
-    </android.support.v4.widget.SwipeRefreshLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>

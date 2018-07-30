@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activities.HealCareDetailsActivity">
+
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/bg_white">
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:elevation="0dp">
+
         <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:title="@string/app_name"/>
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextColor="@color/secondaryTextColor"
+            app:title="@string/app_name" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -32,45 +39,52 @@
                 android:id="@+id/iv_profile"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/logo"/>
+                tools:src="@drawable/logo" />
+
             <TextView
                 android:id="@+id/tv_author_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="sepneela"
-                android:layout_toRightOf="@+id/iv_profile"
                 android:layout_alignTop="@+id/iv_profile"
-                android:layout_marginLeft="@dimen/margin_medium"/>
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_toRightOf="@+id/iv_profile"
+                android:textSize="@dimen/text_small"
+                tools:text="sepneela" />
+
             <TextView
                 android:id="@+id/tv_author_about"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_toRightOf="@+id/tv_author_name"
+                android:background="@drawable/bg_round_primary"
+                android:paddingHorizontal="@dimen/margin_small"
+                android:paddingVertical="@dimen/margin_smaller"
                 android:text="Super moderator"
                 android:textColor="@color/primaryTextColor"
-                android:padding="@dimen/margin_small"
-                android:background="@drawable/bg_round_primary"
-                android:textSize="@dimen/text_small"
-                android:layout_marginLeft="@dimen/margin_medium"/>
+                android:textSize="@dimen/text_small" />
+
             <TextView
                 android:id="@+id/tv_posted_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2 days ago"
-                android:layout_toRightOf="@+id/iv_profile"
                 android:layout_below="@+id/tv_author_name"
+                android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_marginTop="@dimen/margin_medium"
-                android:layout_marginLeft="@dimen/margin_medium"/>
+                android:layout_toRightOf="@+id/iv_profile"
+                tools:text="2 days ago" />
+
             <TextView
                 android:id="@+id/tv_title_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/iv_profile"
-                android:text="@string/title_info"
                 android:layout_marginTop="@dimen/margin_medium_2"
                 android:textColor="@color/secondaryTextColor"
-                android:textSize="@dimen/text_regular_2x"
-                android:textStyle="bold"/>
+                android:textSize="@dimen/text_regular_3x"
+                android:textStyle="bold"
+                tools:text="@string/title_info" />
+
             <LinearLayout
                 android:id="@+id/ll_info"
                 android:layout_width="match_parent"
@@ -86,11 +100,11 @@
                     android:layout_gravity="center"
                     android:layout_marginRight="@dimen/margin_card_medium_2"
                     android:background="@drawable/bg_round_white"
-                    android:paddingVertical="@dimen/margin_smaller"
                     android:paddingHorizontal="@dimen/margin_small"
-                    android:text="Article"
+                    android:paddingVertical="@dimen/margin_smaller"
                     android:textColor="@color/text_blue"
-                    android:textSize="@dimen/text_smaller"/>
+                    android:textSize="@dimen/text_smaller"
+                    tools:text="Article" />
 
 
                 <ImageView
@@ -132,24 +146,25 @@
                     android:layout_height="wrap_content"
                     android:text="1200" />
             </LinearLayout>
+
             <ImageView
                 android:id="@+id/iv_image_details"
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                android:src="@drawable/vitamin_c_fruits"
                 android:layout_below="@+id/ll_info"
                 android:layout_centerHorizontal="true"
-                android:layout_marginVertical="@dimen/margin_medium_3"/>
+                android:layout_marginVertical="@dimen/margin_medium_3"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/vitamin_c_fruits" />
 
             <TextView
                 android:id="@+id/tv_desc_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/title_info"
-                android:textSize="@dimen/text_regular"
+                android:layout_below="@+id/iv_image_details"
                 android:textColor="@color/secondaryTextColor"
-                android:layout_below="@+id/iv_image_details"/>
+                android:textSize="@dimen/text_regular"
+                tools:text="@string/title_info" />
 
         </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>
@@ -158,30 +173,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:weightSum="7"
-        android:background="@color/bg_gray">
+        android:background="@color/bg_gray"
+        android:orientation="horizontal"
+        android:weightSum="7">
 
         <EditText
             android:layout_width="0dp"
-            android:layout_weight="5"
             android:layout_height="wrap_content"
-            android:hint="Write comment"
-            android:background="@color/bg_white"
-            android:padding="@dimen/margin_medium"
+            android:layout_marginHorizontal="@dimen/margin_medium_2"
             android:layout_marginVertical="@dimen/margin_medium_2"
-            android:layout_marginHorizontal="@dimen/margin_card_medium_2"/>
+            android:layout_weight="5"
+            android:background="@drawable/round_corner_white"
+            android:hint="Write comment"
+            android:padding="@dimen/margin_medium"
+            android:textSize="@dimen/text_regular" />
+
         <ImageView
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:src="@drawable/icons_thumbs_up_100"/>
+            android:layout_weight="1"
+            android:src="@drawable/icons_thumbs_up_100" />
+
         <ImageView
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/ic_chat_bubble_outline_primary_64dp"/>
+            android:layout_weight="1"
+            android:src="@drawable/ic_chat_bubble_outline_primary_64dp" />
 
     </LinearLayout>
 

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
+import android.view.View
 import com.mem.mmhealthcare.R
 import com.mem.mmhealthcare.adapters.HealthCareAdapter
 import com.mem.mmhealthcare.components.SmartScrollListener
@@ -13,6 +14,7 @@ import com.mem.mmhealthcare.data.vos.HealthCareInfoVO
 import com.mem.mmhealthcare.delegates.HealthCareItemDelegate
 import com.mem.mmhealthcare.events.DataEvent
 import com.mem.mmhealthcare.events.ErrorEvent
+import com.mem.mmhealthcare.utils.AppConstants
 import kotlinx.android.synthetic.main.activity_main.*
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -27,12 +29,12 @@ class MainActivity : BaseActivity(), HealthCareItemDelegate {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-       rv_health_care.setEmptyView(vpEmptyHealthCare)
+        rv_health_care.setEmptyView(vpEmptyHealthCare)
         rv_health_care.layoutManager = LinearLayoutManager(applicationContext) //add layout to recycler view
 
         mSmartScrollListener = SmartScrollListener(object: SmartScrollListener.OnSmartScrollListener{
             override fun onListEndReach() {
-                Snackbar.make(rv_health_care, "Loading more data.", Snackbar.LENGTH_LONG).show()
+                //Snackbar.make(rv_health_care, "Loading more data.", Snackbar.LENGTH_LONG).show()
                 swipe_refresh_layout.isRefreshing = true
                 HealthCareModel.getInstance().loadHealthCareInfo()
             }
@@ -45,9 +47,8 @@ class MainActivity : BaseActivity(), HealthCareItemDelegate {
         HealthCareModel.getInstance().loadHealthCareInfo()
 
         swipe_refresh_layout.setOnRefreshListener {
-            val healthCareAdapterVal = mHealthCareAdapter
-            healthCareAdapterVal!!.clearData()
-            HealthCareModel.getInstance().loadHealthCareInfo()
+
+            HealthCareModel.getInstance().forceloadHealthCareInfo()
 
         }
 
@@ -58,6 +59,7 @@ class MainActivity : BaseActivity(), HealthCareItemDelegate {
 
         swipe_refresh_layout.isRefreshing = false
         mHealthCareAdapter!!.setData(healthCareLoadedEvent.loadedHealthCareInfo as MutableList<HealthCareInfoVO>)
+        vpEmptyHealthCare.visibility = View.GONE
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -65,6 +67,8 @@ class MainActivity : BaseActivity(), HealthCareItemDelegate {
         swipe_refresh_layout.isRefreshing = false
         Snackbar.make(rv_health_care, "ERROR : " + apiErrorEvent.getMsg(), Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
+
+        //vpEmptyHealthCare.visibility = View.VISIBLE
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -72,10 +76,12 @@ class MainActivity : BaseActivity(), HealthCareItemDelegate {
         swipe_refresh_layout.isRefreshing = false
         Snackbar.make(rv_health_care, "ERROR : " + emptyDataLoadedEvent.errorMsg, Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
+        vpEmptyHealthCare.visibility = View.VISIBLE
     }
 
     override fun onTabHealthCare(healthCare: HealthCareInfoVO?) {
         val intent = Intent(applicationContext, HealCareDetailsActivity::class.java)
+        intent.putExtra(AppConstants.HEALTHCARE_ID, healthCare!!.healthCareId )
         startActivity(intent)
     }
 
